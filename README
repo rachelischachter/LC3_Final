@@ -80,5 +80,21 @@ If you want to make the tools available to other people, next type
 Please send any comments or bug reports to me at lumetta@uiuc.edu.
 Unfortunately, due to the volume of e-mail that I receive on a regular
 basis, I cannot guarantee that I will respond to your mail, but
-I will almost definitely read it.
+I will almost definitely read it. 
+
+
+-----------------------------
+   JANUARY 2023 UPDATE
+-----------------------------
+
+I have modified the LC3 assmebler to accomodate 7 new assembley language functions. 
+RST clears a designated register. For example, RST R7 clears R7 
+SUB subtracts the contents of two registers. For example, SUB R3, R2, R1 subtracts R1 from R2 and stores the result in R3 
+MLT muliplies the contents of two registers. For example, MLT R3, R2, R1 multiplies R1 and R2 and stores the result in R3 
+ABS calculates the absolute value of a designated register. For example, ABS R0 stores the absolute value of R0 in R0
+SAV stores the contents of the three specified registers in the next immediate 3 memory locations. For example, SAV R1, R2, R3 will cause the contents of R1 to be saved in the location of the incremented PC, R2 in PC+1, and R3 in PC+2. SAV automatically branches to the next instruction.  
+CLR clears all registers to 0. CLR accepts no registers. 
+And just for fun, KILL changes the contents of the specified register to 0xDEAD. For example, KILL R0 will cause R0 to containt 0xDEAD.     
+
+When an ASM file contains any of these 7 instructions, the assembler will convert the command to the proper binary code. 
 
